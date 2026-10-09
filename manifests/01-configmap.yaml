@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shipfast-status-api-config
+  namespace: shipfast
+  labels:
+    app.kubernetes.io/name: shipfast-status-api
+    app.kubernetes.io/component: api
+    app.kubernetes.io/part-of: shipfast
+    app.kubernetes.io/managed-by: argocd
+data:
+  APP_ENV: "production"

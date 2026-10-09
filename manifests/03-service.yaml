@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipfast-status-api
+  namespace: shipfast
+  labels:
+    app.kubernetes.io/name: shipfast-status-api
+    app.kubernetes.io/component: api
+    app.kubernetes.io/part-of: shipfast
+    app.kubernetes.io/managed-by: argocd
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: shipfast-status-api
+  ports:
+    - name: http
+      port: 5000
+      targetPort: http
+      protocol: TCP
