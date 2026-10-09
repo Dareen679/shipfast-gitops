@@ -9,4 +9,4 @@ metadata:
     app.kubernetes.io/part-of: shipfast
     app.kubernetes.io/managed-by: argocd
 data:
-  APP_ENV: "production"
+  APP_ENV: "staging"
