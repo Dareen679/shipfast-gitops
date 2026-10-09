@@ -22,6 +22,10 @@ spec:
       maxSurge: 1
   template:
     metadata:
+      annotations:
+        # Env vars from the ConfigMap are only read when a pod starts.
+        # Bump this whenever 01-configmap.yaml changes so the pods restart.
+        shipfast.io/config-version: "2"
       labels:
         app.kubernetes.io/name: shipfast-status-api
         app.kubernetes.io/component: api
